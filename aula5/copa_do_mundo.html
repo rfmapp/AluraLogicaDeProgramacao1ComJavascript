@@ -1,0 +1,23 @@
+<meta charset="utf-8">
+<script>
+    var pulaLinha = function() {
+    	document.write("<br>");
+    };
+
+    var mostra = function(frase) {
+    	document.write(frase);
+    	pulaLinha();
+    };
+
+    alert("Este programa mostra quais anos, dentro do intervalo estabelecido por"
+    + " você, são anos de copa do mundo. Indique a seguir o ano de início e fim.");
+    
+    var anoDeCopa = parseInt(prompt("Qual o ano de início?"));
+    var anoAtual = parseInt(prompt("Qual o ano de fim?"));
+
+    while(anoDeCopa <= anoAtual) {
+        mostra(anoDeCopa + " tem copa!");
+        anoDeCopa = anoDeCopa + 4;
+    }
+
+</script>
