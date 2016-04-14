@@ -1,0 +1,42 @@
+<meta charset="utf-8">
+
+<h3>SIMULA LOTERIA</h3>
+<br>
+Vamos ver se você consegue acertar.
+<hr>
+
+<script>
+    var numerosSorteados = [];
+
+    for(var i = 0; i < 6; i++) {
+        numerosSorteados[i] = Math.round(Math.random() * 60);
+    }
+
+    var numerosApostados = [];
+
+    for(var j = 0; j < 6; j++) {
+        numerosApostados[j] = prompt("Digite o numero " + (j + 1));
+    }
+
+    console.log(numerosSorteados);
+    console.log(numerosApostados);
+
+    var acertou = false;
+
+    for(var l = 0; l < 6; l++) {
+        for(var m = 0; m < 6; m++) {
+            if(numerosApostados[l] == numerosSorteados[m]) {
+                acertou = true;
+                break;
+            }
+        }
+
+        if(acertou == true) {
+            document.write("Muito bem, acertou o número " + numerosApostados[l] + "!<br>");
+        } else {
+            document.write("Sinto muito, o número " + numerosApostados[l] + " não foi sorteado.<br>");
+        }
+    }
+    document.write("Os números sorteados foram: " + numerosSorteados + ".<br>");
+    document.write("Os números apostados foram: " + numerosApostados + ".<br>");
+</script>
