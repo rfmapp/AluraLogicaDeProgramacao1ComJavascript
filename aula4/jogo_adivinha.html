@@ -10,10 +10,17 @@
     };
 
     var numeroPensado = Math.round(Math.random() * 100);
-    var chute = prompt("Tente adivinhar o número que escolhi, entre 1 e 100.");
-    if(chute == numeroPensado) {
-        mostra("Isso mesmo, eu escolhi o número " + numeroPensado);
-    } else {
-        mostra("Errado! O número que escolhi foi " + numeroPensado);
+    var tentativas = 1;
+
+    while(tentativas <= 3) {
+        var chute = prompt("Tente adivinhar o número que escolhi, entre 1 e 100.");
+        if(chute == numeroPensado) {
+            mostra("Isso mesmo, eu escolhi o número " + numeroPensado);
+            break;
+        } else {
+            mostra("Errado! Talvez você possa tentar de novo.");
+        }
+
+        tentativas++;
     }
 </script>
